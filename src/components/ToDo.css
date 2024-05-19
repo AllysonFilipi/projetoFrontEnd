@@ -1,0 +1,23 @@
+.todo {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+  }
+  
+  .todo.completed .text {
+    text-decoration: line-through;
+    color: #888;
+  }
+  
+  .icons .icon {
+    margin-left: 10px;
+    cursor: pointer;
+    color: #888;
+  }
+  
+  .icons .icon:hover {
+    color: #333;
+  }
+  
