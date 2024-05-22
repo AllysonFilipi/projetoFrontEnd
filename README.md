@@ -1,6 +1,43 @@
-# Getting Started with Create React App
+# ToDo App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Um aplicativo simples de lista de tarefas usando React no frontend e Node.js com Express no backend. O app permite adicionar, atualizar, marcar como concluída e excluir tarefas. As tarefas são armazenadas em um banco de dados MongoDB.
+
+## Funcionalidades
+
+- Adicionar uma nova tarefa com uma data associada.
+- Atualizar o texto e a data de uma tarefa existente.
+- Marcar uma tarefa como concluída.
+- Excluir uma tarefa.
+- Exibir uma lista de tarefas com suas datas e status de conclusão.
+
+## Tecnologias Utilizadas
+
+### Frontend
+
+- React
+- CSS (para estilização)
+
+### Backend
+
+- Node.js
+- Express
+- MongoDB
+- Mongoose
+
+## Instalação
+
+### Pré-requisitos
+
+- Node.js instalado
+- MongoDB Atlas ou servidor MongoDB local
+- Yarn ou npm
+
+### Clonando o repositório
+
+```bash
+git clone https://github.com/seu-usuario/todo-app.git
+cd todo-app
+
 
 ## Available Scripts
 
