@@ -1,4 +1,3 @@
-// src/utils/HandleApi.js
 import axios from "axios";
 
 const baseURL = "http://localhost:5000"; // Certifique-se de que a URL do backend está correta
@@ -13,7 +12,7 @@ const getAllToDo = (setToDo) => {
     });
 };
 
-const addToDo = (text, date, setText, setDate, setToDo) => {
+const addToDo = (text, date, setText, setDate, setToDo, setIsLoading) => {
   axios.post(`${baseURL}/save`, { text, date })
     .then(({ data }) => {
       setText("");
@@ -22,10 +21,13 @@ const addToDo = (text, date, setText, setDate, setToDo) => {
     })
     .catch((err) => {
       console.error(err);
+    })
+    .finally(() => {
+      setIsLoading(false); // Para o carregamento
     });
 };
 
-const updateToDo = (toDoId, text, date, setToDo, setText, setDate, setIsUpdating) => {
+const updateToDo = (toDoId, text, date, setToDo, setText, setDate, setIsUpdating, setIsLoading) => {
   axios.post(`${baseURL}/update`, { _id: toDoId, text, date })
     .then(({ data }) => {
       setText("");
@@ -35,6 +37,9 @@ const updateToDo = (toDoId, text, date, setToDo, setText, setDate, setIsUpdating
     })
     .catch((err) => {
       console.error(err);
+    })
+    .finally(() => {
+      setIsLoading(false); // Para o carregamento
     });
 };
 
