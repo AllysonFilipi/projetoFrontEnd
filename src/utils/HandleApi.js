@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:5000"; // Certifique-se de que a URL do backend está correta
+const baseURL = "https://projetobackend-7pp7.onrender.com"; // Certifique-se de que a URL do backend está correta
 
 const getAllToDo = (setToDo) => {
   axios.get(baseURL)

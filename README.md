@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+Aula de engenharia de sofware
+
+>>>>>>> e38d077c6a0f167631269ba302389fb5086441bf
 # ToDo App
 
 Um aplicativo simples de lista de tarefas usando React no frontend e Node.js com Express no backend. O app permite adicionar, atualizar, marcar como concluída e excluir tarefas. As tarefas são armazenadas em um banco de dados MongoDB.
