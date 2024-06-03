@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-=======
-Aula de engenharia de sofware
-
->>>>>>> e38d077c6a0f167631269ba302389fb5086441bf
 # ToDo App
-
 Um aplicativo simples de lista de tarefas usando React no frontend e Node.js com Express no backend. O app permite adicionar, atualizar, marcar como concluída e excluir tarefas. As tarefas são armazenadas em um banco de dados MongoDB.
 
 ## Funcionalidades
@@ -36,6 +30,100 @@ Um aplicativo simples de lista de tarefas usando React no frontend e Node.js com
 - Node.js instalado
 - MongoDB Atlas ou servidor MongoDB local
 - Yarn ou npm
+
+## Diagrama de classes
+
++---------------------+         +----------------------------+
+|      Product        |         |      Scrum Master          |
+|       Owner         |         |                            |
++----------+----------+         +--------------+-------------+
+|          |                                    |            |
+|          |                                    |            |
+|          v                                    v            |
+|          +----------------------+  +----------+------------+
+|          |        Use Case       |  |        Use Case         |
+|          |                      |  |                          |
+|          | - Adicionar Tarefa   |  | - Marcar Tarefa como    |
+|          | - Editar Tarefa      |  |   Concluída             |
+|          | - Excluir Tarefa     |  |                          |
+|          | - Exibir Lista de    |  +--------------------------+
+|          |   Tarefas            |
++----------+----------------------+
+
+
++---------------------+
+|      Developers     |
+|                     |
++---------------------+
+          |
+          |
+          v
++-----------------------------+
+|         Use Case             |
+|                             |
+| - Adicionar Tarefa          |
+|   - Ator Principal:         |
+|     Product Owner (PO)      |
+|   - Ator Secundário:        |
+|     Scrum Master            |
+|   - Fluxo Principal:        |
+|     1. Product Owner (PO)   |
+|        insere a tarefa      |
+|        desejada.            |
+|     2. Scrum Master verifica|
+|        a viabilidade da     |
+|        tarefa.               |
+|     3. Scrum Master e       |
+|        Developers discutem  |
+|        os detalhes da tarefa.|
+|     4. Scrum Master adiciona|
+|        a tarefa ao backlog.  |
+|                             |
+| - Editar Tarefa             |
+|   - Ator Principal:         |
+|     Product Owner (PO)      |
+|   - Ator Secundário:        |
+|     Scrum Master            |
+|   - Fluxo Principal:        |
+|     1. Product Owner (PO)   |
+|        solicita a edição da |
+|        tarefa.               |
+|     2. Scrum Master avalia   |
+|        a necessidade de     |
+|        edição.               |
+|     3. Scrum Master e       |
+|        Developers realizam  |
+|        as alterações na tarefa.|
+|                             |
+| - Excluir Tarefa            |
+|   - Ator Principal:         |
+|     Product Owner (PO)      |
+|   - Ator Secundário:        |
+|     Scrum Master            |
+|   - Fluxo Principal:        |
+|     1. Product Owner (PO)   |
+|        solicita a exclusão da|
+|        tarefa.               |
+|     2. Scrum Master verifica|
+|        a viabilidade da     |
+|        exclusão.             |
+|     3. Scrum Master e       |
+|        Developers removem   |
+|        a tarefa do backlog.  |
+|                             |
+| - Exibir Lista de Tarefas   |
+|   - Ator Principal:         |
+|     Product Owner (PO)      |
+|   - Ator Secundário:        |
+|     Scrum Master            |
+|   - Fluxo Principal:        |
+|     1. Product Owner (PO)   |
+|        solicita a exibição  |
+|        da lista de tarefas.  |
+|     2. Scrum Master e       |
+|        Developers preparam  |
+|        e exibem a lista.     |
++-----------------------------+
 
 ### Clonando o repositório
 
