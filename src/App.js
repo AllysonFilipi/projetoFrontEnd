@@ -1,7 +1,8 @@
+//App.js
 import { useEffect, useState } from "react";
 import ToDo from "./components/ToDo";
 import { addToDo, deleteToDo, getAllToDo, updateToDo, toggleCompleteToDo } from "./utils/HandleApi";
-import './App.css'; // Importando o CSS
+import './App.css';
 
 function App() {
   const [toDo, setToDo] = useState([]);
@@ -9,11 +10,38 @@ function App() {
   const [date, setDate] = useState("");
   const [isUpdating, setIsUpdating] = useState(false);
   const [toDoId, setToDoId] = useState("");
-  const [isLoading, setIsLoading] = useState(false); // Novo estado de carregamento
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     getAllToDo(setToDo);
   }, []);
+
+  // const validateDate = (date) => {
+  //   const selectedDate = new Date(date);
+  //   const currentDate = new Date();
+  //   return selectedDate > currentDate;
+  // };
+
+  const handleAddOrUpdate = () => {
+    if (!text.trim() || !date.trim()) {
+      alert("Por favor, preencha todos os campos.");
+      setIsLoading(false);
+      return;
+    }
+
+    // if (!validateDate(date)) {
+    //   alert("A data deve ser igual ou maior que a data atual.");
+    //   setIsLoading(false);
+    //   return;
+    // }
+
+    setIsLoading(true);
+    if (isUpdating) {
+      updateToDo(toDoId, text, date, setToDo, setText, setDate, setIsUpdating, setIsLoading);
+    } else {
+      addToDo(text, date, setText, setDate, setToDo, setIsLoading);
+    }
+  };
 
   const updateMode = (_id, text, date) => {
     setIsUpdating(true);
@@ -42,18 +70,8 @@ function App() {
             />
             <button
               className="add"
-              onClick={
-                isUpdating
-                  ? () => {
-                      setIsLoading(true);
-                      updateToDo(toDoId, text, date, setToDo, setText, setDate, setIsUpdating, setIsLoading);
-                    }
-                  : () => {
-                      setIsLoading(true);
-                      addToDo(text, date, setText, setDate, setToDo, setIsLoading);
-                    }
-              }
-              disabled={isLoading} // Desabilita o botão enquanto carrega
+              onClick={handleAddOrUpdate} 
+              disabled={isLoading}
             >
               {isLoading ? "Carregando..." : isUpdating ? "Atualizar" : "Adicionar"}
             </button>

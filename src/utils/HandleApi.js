@@ -1,6 +1,8 @@
+//HandleApi.js
+
 import axios from "axios";
 
-const baseURL = "https://projetobackend-7pp7.onrender.com"; // Certifique-se de que a URL do backend está correta
+const baseURL = "https://projetobackend-7pp7.onrender.com"; 
 
 const getAllToDo = (setToDo) => {
   axios.get(baseURL)

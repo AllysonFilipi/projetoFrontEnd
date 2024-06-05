@@ -1,4 +1,5 @@
-// src/components/ToDo.js
+//ToDo.js
+
 import React from "react";
 import { BiEdit } from "react-icons/bi";
 import { AiFillDelete } from "react-icons/ai";
@@ -12,9 +13,9 @@ const ToDo = ({ text, date, completed, updateMode, deleteToDo, toggleComplete })
         <div className="date">{new Date(date).toLocaleDateString()}</div>
       </div>
       <div className="icons">
-        <button onClick={toggleComplete} className="complete-btn">
-          {completed ? <FaCheckCircle className="icon completed-icon" /> : <FaRegCircle className="icon not-completed-icon" />}
-        </button>
+        <span className="complete-btn" onClick={toggleComplete}>
+          {completed ? <FaCheckCircle className="completed-icon" /> : <FaRegCircle className="not-completed-icon" />}
+        </span>
         <BiEdit className="icon" onClick={updateMode} />
         <AiFillDelete className="icon" onClick={deleteToDo} />
       </div>

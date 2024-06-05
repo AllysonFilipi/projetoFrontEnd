@@ -1,4 +1,4 @@
-/* Reset básico */
+/* index.css */
 * {
   margin: 0;
   padding: 0;
@@ -13,6 +13,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Comentado para evitar conflito com App.css
 .container {
   max-width: 600px;
   margin: 50px auto;
@@ -21,6 +22,7 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
+*/
 
 h1 {
   margin-bottom: 1rem;
